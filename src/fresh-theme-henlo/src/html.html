@@ -1,0 +1,106 @@
+{{#*inline "myPartial"}}
+  <div id="contact">
+    <ul class="henlo-list">
+      {{#has 'location.city'}}
+        <li class="email">
+          {{#has 'location.country'}}
+            {{concat r.location.city ', ' r.location.country}}
+          {{else}}
+            {{ r.location.city ~}}
+          {{~/has}}
+        </li>
+      {{/has}}
+      {{#has 'contact.email'}}
+        <li class="email">
+          @:
+          <a href="mailto:{{{ RAW.contact.email }}}">
+            {{ RAW.contact.email }}
+          </a>
+        </li>
+      {{/has}}
+      {{#has 'contact.phone'}}
+        <li class="phone">
+          T: {{ RAW.contact.phone }}
+        </li>
+      {{/has}}
+      {{#has 'contact.website'}}
+        <li class="website">
+          <a href="{{{ RAW.contact.website }}}">
+            {{trimURL RAW.contact.website }}
+          </a>
+        </li>
+      {{/has}}
+    </ul>
+
+    <ul class="henlo-list">
+      {{#each r.social}}
+        <li>
+          <span>{{this.label}}</span>
+          <span>{{concat '@' this.user}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/inline}}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ RAW.name }}</title>
+    {{{styleSheet "html.css" "link"}}}
+  </head>
+  <body>
+    <header class="henlo-header">
+      <div class="header-img">
+        <span>A</span>
+        <span>R</span>
+        <span>N</span>
+        <span>+</span>
+      </div>
+      <h1 class="header-title">{{{ r.name }}}</h1>
+      <p class="header-subtitle">{{ r.info.label }}</p>
+      {{#has "info.brief"}}
+        <p class="header-text">{{{ r.info.brief }}}<p>
+      {{/has}}
+    </header>
+    <section>
+      {{> myPartial }}
+    </section>
+    <main>
+
+{{> section-employment }}
+
+{{> section/skills }}
+
+{{> section/projects }}
+
+{{> section/governance }}
+
+{{> section/education }}
+
+{{> section/affiliation }}
+
+{{> section/service }}
+
+{{> section/extracurricular }}
+
+{{> section/samples }}
+
+{{> section/writing }}
+
+{{> section/reading }}
+
+{{> section/recognition }}
+
+{{> section/speaking }}
+
+{{> section/references }}
+
+{{> section/interests }}
+
+
+
+    </main>
+  </body>
+</html>

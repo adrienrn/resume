@@ -1,0 +1,20 @@
+{{#section "writing"}}
+<hr>
+<section id="writing">
+  {{#> header-writing }}
+    {{> header-icon _title="WRITING" _section="writing" _hdricon=(lookup . '_icon') }}
+  {{/header-writing}}
+  {{#each r.writing }}
+    {{#> body-writing }}
+    <div>
+    <h3><em>{{#if url}}<a href="{{{ url }}}">{{{ title }}}</a>{{else}}{{{ title }}}{{/if}}</em>,
+
+      {{stringOrObject publisher "name" }}</h3>
+      <span class="tenure">{{date date 'YYYY'}}</span>
+      {{{ summary }}}
+      {{> highlights }}
+    </div>
+    {{/body-writing}}
+  {{/each}}
+</section>
+{{/section}}

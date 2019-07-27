@@ -3,7 +3,147 @@
   <head>
     <meta charset="utf-8">
     <title>Adrien Ricart-Noblet</title>
-    <style>
+    <style>@import url('https://fonts.googleapis.com/css?family=Barlow:700,900');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+:root {
+  --brand-primary: #5400E5;
+  --container-width: 720px;
+  --text-secondary: #777D82;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Muli, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Barlow, Arial, sans-serif;
+  line-height: 1.15;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+}
+
+.timeline,
+.henlo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.henlo-list li {
+  margin-bottom: 0.33em;
+}
+
+.timeline-item {
+  padding-bottom: 50px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.timeline-item:after,
+.timeline-item:before {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.timeline-item:after {
+  background-color: #c9cccf;
+  border: 6px solid #ffffff;
+  border-radius: 50%;
+  height: 10px;
+  left: -9px;
+  top: 0;
+  width: 10px;
+}
+
+.timeline-item:before {
+  background-color: #c9cccf;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 2px;
+}
+
+.henlo-header,
+section /* temporary */ {
+  margin: auto;
+  position: relative;
+  width: var(--container-width);
+}
+
+.henlo-header {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.header-img {
+  background-color: var(--brand-primary);
+  display: none;
+  position: absolute;
+  left: -40px;
+  flex-wrap: wrap;
+  width: 80px;
+  height: 80px;
+}
+
+.header-img span {
+  flex: 0 0 40%;
+  padding: 5%;
+}
+
+.header-title {
+  margin: 0;
+  margin-bottom: .3em;
+  text-transform: uppercase;
+}
+
+.header-subtitle {
+  color: var(--brand-primary);
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: .5em;
+}
+
+.header-text {
+  color: var(--text-secondary);
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.section {
+  margin-top: 72px;
+}
+
+.section-title {
+  color: #c9cccf;
+  font-size: .9rem;
+  margin: 0;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+
+.hvpod-title {
+  margin: 0;
+  margin-bottom: 1em;
+}
 </style>
   </head>
   <body>
@@ -11,16 +151,16 @@
       <header>
         <h1>Adrien Ricart-Noblet</h1>
         <div id="contact">
-          <div class="email"><a href="mailto:jdoe@onecoolstartup.io">jdoe@onecoolstartup.io</a></div>
-          <div class="phone">1-650-999-7777</div>
-          <div class="website"><a href="https://www.janeblogs.com">www.janeblogs.com</a></div>
+          <div class="email"><a href="mailto:adrien.ricartnoblet@gmail.com">adrien.ricartnoblet@gmail.com</a></div>
+          <div class="phone">+33 6 52 64 01 20</div>
+          
         </div>
       </header>
 
 
 
 <section id="summary">
-  <strong>Imaginary full-stack software developer with 6+ years industry experience</strong> specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.
+  Imaginary full-stack software developer with 6+ years industry experience specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.
 </section>
 
 
@@ -131,39 +271,6 @@
     </div>
 </section>
 
-<hr>
-<section id="projects">
-    <header>
-      <h2>projects</h2>
-    </header>
-    <div>
-    <h3><em>Contributor</em>,
-    <a href="https://fluentdesk.com/hackmyresume">HackMyResume</a>
-    </h3>
-    <span class="tenure">2015-09 — Present</span>
-    <p>Exemplar user for HackMyResume and FluentCV!</p>
-
-    <span class="keywords">JavaScript Node.js cross-platform JSON </span>    
-    </div>
-    <div>
-    <h3><em>Co-creator</em>,
-    <a href="https://project.website.com">Augmented Android</a>
-    </h3>
-    <span class="tenure">2012-02 — 2014-01</span>
-    <p>Performed flagship product conceptualization and development.</p>
-
-    <span class="keywords">Android Java Xamarin </span>    
-    </div>
-    <div>
-    <h3><em>Creator</em>,
-    <a href="https://www.janeblogs.com">Blog</a>
-    </h3>
-    
-    <p>Conceptualization, design, development, and deployment.</p>
-
-    <span class="keywords">Jekyll Ruby HTML 5 JavaScript HTTP LAMP </span>    
-    </div>
-</section>
 
 <hr>
 <section id="governance">

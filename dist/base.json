@@ -3,39 +3,25 @@
     "label": "Front-end Developer",
     "characterClass": "Programmer",
     "quote": "More",
-    "website": "https://www.janeblogs.com",
-    "phone": "1-650-999-7777",
-    "email": "jdoe@onecoolstartup.io",
-    "other": [
-      {
-        "label": "Home Phone",
-        "flavor": "phone",
-        "value": "1-650-999-4321"
-      },
-      {
-        "label": "Work Phone",
-        "flavor": "phone",
-        "value": "1-650-777-1234"
-      },
-      {
-        "label": "Personal Email",
-        "flavor": "email",
-        "value": "jane@janeblogs.com"
-      }
-    ],
+    "phone": "+33 6 52 64 01 20",
+    "email": "adrien.ricartnoblet@gmail.com",
     "name": "Adrien Ricart-Noblet",
-    "summary": "**Imaginary full-stack software developer with 6+ years industry experience** specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.",
-    "picture": "jane.png",
+    "summary": "Imaginary full-stack software developer with 6+ years industry experience specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.",
     "profiles": [
       {
         "network": "GitHub",
-        "username": "janeq-was-here",
-        "url": "https://github.com/janeq-was-here"
+        "username": "hussard",
+        "url": "https://github.com/hussard"
       },
       {
         "network": "Twitter",
-        "username": "janeq-was-here",
-        "url": "https://twitter.com/janeq-was-here"
+        "username": "adrienrn",
+        "url": "https://twitter.com/adrienrn"
+      },
+      {
+        "network": "Codepen",
+        "username": "hussard",
+        "url": "https://codepen.io/hussard"
       }
     ]
   },

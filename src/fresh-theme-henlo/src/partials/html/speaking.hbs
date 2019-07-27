@@ -1,0 +1,18 @@
+{{#section "speaking"}}
+<hr>
+<section id="speaking">
+  {{#> header-speaking }}
+    {{> header-icon _title="SPEAKING" _section="speaking" _hdricon=(lookup . '_icon') }}
+  {{/header-speaking}}
+  {{#each r.speaking}}
+    {{#> body-speaking }}
+    <div>
+    <h3><em>{{{ title }}}</em>, {{{ event }}}</h3>
+    <span class="tenure">{{date date 'YYYY' }}</span>
+    {{{ summary }}}
+    {{> highlights }}
+    </div>
+    {{/body-speaking}}
+  {{/each}}
+</section>
+{{/section}}

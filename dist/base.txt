@@ -1,11 +1,11 @@
 Adrien Ricart-Noblet
-Email: jdoe@onecoolstartup.io
-Tel: 1-650-999-7777
-Web: https://www.janeblogs.com
+Email: adrien.ricartnoblet@gmail.com
+Tel: +33 6 52 64 01 20
+
 ================================================================================
 
 
-**Imaginary full-stack software developer with 6+ years industry experience** specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.
+Imaginary full-stack software developer with 6+ years industry experience specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.
 
 
 SKILLS -------------------------------------------------------------------------
@@ -43,20 +43,6 @@ Performed IT administration and deployments for Dunder Mifflin.
 - Performed mission-critical system backups and 
 - Etc.
 
-
-PROJECTS -----------------------------------------------------------------------
-
-HackMyResume, contributor (2015-09 — Present)
-A resume authoring and analysis tool for OS X, Linux, and Windows.
-Exemplar user for HackMyResume and FluentCV!
-
-Augmented Android, co-creator (2012-02 — 2014-01)
-An augmented reality app for Android.
-Performed flagship product conceptualization and development.
-
-Blog, creator (??? — Present)
-My programming blog. Powered by Jekyll.
-Conceptualization, design, development, and deployment.
 
 
 GOVERNANCE ---------------------------------------------------------------------

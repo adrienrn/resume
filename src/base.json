@@ -10,97 +10,45 @@
   "info": {
     "label": "Front-end Developer",
     "characterClass": "Programmer",
-    "brief": "**Imaginary full-stack software developer with 6+ years industry experience** specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.",
-    "image": "jane.png",
+    "brief": "Imaginary full-stack software developer with 6+ years industry experience specializing in cloud-driven web applications and middleware. A native of southern CA, Jane enjoys hiking, mystery novels, and the company of Rufus, her two year old beagle.",
     "quote": "More"
   },
 
   "contact": {
-    "website": "https://www.janeblogs.com",
-    "phone": "1-650-999-7777",
-    "email": "jdoe@onecoolstartup.io",
-    "other": [
-      {
-        "label": "Home Phone",
-        "flavor": "phone",
-        "value": "1-650-999-4321"
-      },
-      {
-        "label": "Work Phone",
-        "flavor": "phone",
-        "value": "1-650-777-1234"
-      },
-      {
-        "label": "Personal Email",
-        "flavor": "email",
-        "value": "jane@janeblogs.com"
-      }
-    ]
+    "phone": "+33 6 52 64 01 20",
+    "email": "adrien.ricartnoblet@gmail.com"
   },
 
   "location": {
     "address": "123 Somewhere Rd.",
-    "city": "Mountain View",
-    "region": "CA",
-    "code": "94035",
-    "country": "US"
+    "city": "Paris",
+    "region": "Ile-de-France",
+    "code": "75000",
+    "country": "FR"
   },
 
   "projects": [
-    {
-      "title": "HackMyResume",
-      "category": "FOSS",
-      "role": "contributor",
-      "url": "https://fluentdesk.com/hackmyresume",
-      "start": "2015-09",
-      "repo": "https://github.com/hacksalot/hackmyresume",
-      "description": "A resume authoring and analysis tool for OS X, Linux, and Windows.",
-      "summary": "Exemplar user for HackMyResume and FluentCV!",
-      "keywords": ["JavaScript", "Node.js", "cross-platform", "JSON"],
-      "media": [
-        {
-          "category": "download",
-          "url": "https://www.npmjs.com/package/hackmyresume"
-        }
-      ]
-    },
-    {
-      "title": "Augmented Android",
-      "category": "commercial",
-      "role": "co-creator",
-      "url": "https://project.website.com",
-      "repo": "https://repo.website.com",
-      "description": "An augmented reality app for Android.",
-      "start": "2012-02",
-      "end": "2014-01",
-      "summary": "Performed flagship product conceptualization and development.",
-      "keywords": ["Android", "Java", "Xamarin"]
-    },
-    {
-      "title": "Blog",
-      "category": "personal",
-      "role": "creator",
-      "url": "https://www.janeblogs.com",
-      "description": "My programming blog. Powered by Jekyll.",
-      "summary": "Conceptualization, design, development, and deployment.",
-      "keywords": ["Jekyll", "Ruby", "HTML 5", "JavaScript", "HTTP", "LAMP"]
-    }
   ],
 
   "social": [
-
     {
-      "label": "GitHub",
+      "label": "Github",
       "network": "GitHub",
-      "user": "janeq-was-here",
-      "url": "https://github.com/janeq-was-here"
+      "user": "hussard",
+      "url": "https://github.com/hussard"
     },
 
     {
       "label": "Twitter",
       "network": "Twitter",
-      "user": "janeq-was-here",
-      "url": "https://twitter.com/janeq-was-here"
+      "user": "adrienrn",
+      "url": "https://twitter.com/adrienrn"
+    },
+    {
+      "label": "Codepen",
+      "network": "Codepen",
+      "user": "hussard",
+      "url": "https://codepen.io/hussard"
     }
   ],
 

@@ -1,0 +1,39 @@
+{{#section "employment"}}
+<section id="employment" class="section">
+  {{> header-simple _title="EMPLOYMENT" _section="employment" }}
+
+  <ul class="timeline">
+  {{#each r.employment.history}}
+    {{#> body-employment }}
+      <li class="timeline-item">
+        <div class="hvpod hvpod--job">
+          <h3 class="hvpod-title">
+            {{ position }}
+          </h3>
+          <p class="hvpod-subtitle">
+            {{#if url }}
+              <a href="{{{ url }}}">{{ employer }}</a>
+            {{else}}
+              {{ employer }}
+            {{/if}}
+          </p>
+          <p class="location">{{ location }}</p>
+          <p class="tenure">{{dateRange .}}</p>
+
+          <div>{{{ summary }}}</div>
+
+          {{> highlights }}
+          {{#if keywords}}
+            <span class="keywords">
+              {{#each keywords}}
+                {{{ . }}}
+              {{/each}}
+            </span>
+          {{/if}}
+        </div>
+      </div>
+    {{/body-employment}}
+  {{/each}}
+  <ul>
+</section>
+{{/section}}

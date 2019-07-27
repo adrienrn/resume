@@ -1,0 +1,24 @@
+{{#section 'samples'}}
+<hr>
+<section id="samples">
+  {{#> header-samples }}
+    {{> header-icon _title="SAMPLES" _section="samples" _hdricon=(lookup . '_icon') }}
+  {{/header-samples}}
+  {{#each r.samples}}
+    {{#> body-samples }}
+    <div>
+    <h3>
+    {{#if url}}
+    <a href="{{{ url }}}">{{ title }}</a>
+    {{else}}
+    {{ title }}
+    {{/if}}
+    </h3>
+    <span class="tenure">{{date date 'YYYY-MM'}}</span>
+    {{{ summary }}}
+    {{> highlights }}
+    </div>
+    {{/body-samples}}
+  {{/each}}
+</section>
+{{/section}}

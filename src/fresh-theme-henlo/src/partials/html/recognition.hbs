@@ -1,0 +1,18 @@
+{{#section "recognition"}}
+<hr>
+<section id="recognition">
+  {{#> header-recognition }}
+    {{> header-icon _title="RECOGNITION" _section="recognition" _hdricon=(lookup . '_icon') }}
+  {{/header-recognition}}
+  {{#each r.recognition}}
+    {{#> body-recognition }}
+    <div>
+    <h3><em>{{ title }}</em>, {{{link from url }}}</h3>
+    <span class="tenure">{{date date 'YYYY' }}</span>
+    {{{ summary }}}
+    {{> highlights }}
+    </div>
+    {{/body-recognition}}
+  {{/each}}
+</section>
+{{/section}}
