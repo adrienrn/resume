@@ -2,34 +2,38 @@
 <section id="employment" class="section">
   {{> header-simple _title="EMPLOYMENT" _section="employment" }}
 
-  <ul class="timeline">
+  <ul class="henlo-list">
   {{#each r.employment.history}}
     {{#> body-employment }}
-      <li class="timeline-item">
+      <li class="henlo-list-item">
         <div class="hvpod hvpod--job">
-          <h3 class="hvpod-title">
-            {{ position }}
-          </h3>
-          <p class="hvpod-subtitle">
-            {{#if url }}
-              <a href="{{{ url }}}">{{ employer }}</a>
-            {{else}}
-              {{ employer }}
+          <div class="hvpod-block">
+            <h3 class="hvpod-title">
+              {{ position }}
+            </h3>
+            <p class="hvpod-subtitle">
+              <em>
+                {{#if url }}
+                  <a href="{{{ url }}}">{{ employer }}</a>
+                {{else}}
+                  {{ employer }}
+                {{/if}}
+              </em> |
+              {{ dateRange . }}
+            </p>
+
+            <div class="hvpod-element">{{{ summary }}}</div>
+
+            <div class="hvpod-element hvpod-element--highlights">
+              {{> highlights }}
+            </div>
+
+            {{#if keywords}}
+              <div class="hvpod-element">
+                {{> molecule-keywords }}
+              </div>
             {{/if}}
-          </p>
-          <p class="location">{{ location }}</p>
-          <p class="tenure">{{dateRange .}}</p>
-
-          <div>{{{ summary }}}</div>
-
-          {{> highlights }}
-          {{#if keywords}}
-            <span class="keywords">
-              {{#each keywords}}
-                {{{ . }}}
-              {{/each}}
-            </span>
-          {{/if}}
+          </div>
         </div>
       </div>
     {{/body-employment}}

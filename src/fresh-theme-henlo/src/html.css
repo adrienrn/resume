@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow:700,900');
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,900');
 
 :root {
   --brand-primary: #5400E5;
-  --container-width: 720px;
-  --text-secondary: #777D82;
+  --container-gutter: 140px;
+  --container-width: 21.7cm;
+  --text-secondary: #62666a;
+  --section-title-color: hsl(210, 6%, 70%);
+  --brand-primary-alt: hsla(262, 100%, 45%, .1);
+  --font-family-primary: Muli, Arial, sans-serif;
+  --font-family-secondary: Barlow, Arial, sans-serif;
 }
 
 * {
@@ -13,9 +18,10 @@
 
 html,
 body {
-  font-family: Muli, Arial, sans-serif;
+  color: #00000;
+  font-family: var(--font-family-primary);
   font-size: 16px;
-  line-height: 1.42;
+  line-height: 1.33;
   margin: 0;
 }
 
@@ -25,78 +31,84 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Barlow, Arial, sans-serif;
+  font-family: var(--font-family-secondary);
   line-height: 1.15;
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-weight: 900;
 }
 
-.timeline,
+/*.timeline,*/
 .henlo-list {
   list-style: none;
-  margin: 0;
+  margin: 0px;
   padding: 0px;
 }
 
-.henlo-list li {
-  margin-bottom: 0.33em;
+.henlo-list--job_keywords,
+.henlo-list--skills_set {
+  margin-left: -.4em;
 }
 
-.timeline-item {
-  padding-bottom: 50px;
-  padding-left: 16px;
-  position: relative;
+.henlo-list-item {
+  margin-bottom: 2rem;
 }
 
-.timeline-item:after,
-.timeline-item:before {
-  content: '';
-  display: block;
-  position: absolute;
+.henlo-list--keywords .henlo-list-item,
+.henlo-list--keywords .henlo-list-item {
+  display: inline-block;
+  margin-bottom: .4em;
+  margin-left: .2em;
 }
 
-.timeline-item:after {
-  background-color: #c9cccf;
-  border: 6px solid #ffffff;
-  border-radius: 50%;
-  height: 10px;
-  left: -9px;
-  top: 0;
-  width: 10px;
+.henlo-ist--info_contact {
+  display: flex;
+  justify-content: space-between;
 }
 
-.timeline-item:before {
-  background-color: #c9cccf;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  width: 2px;
+.henlo-ist--info_contact .henlo-list-item {
+  /*flex: 0 0 33%;*/
+  font-size: .85rem;
+  margin-bottom: .1em;
+  /*text-align: right;*/
+  white-space: nowrap;
 }
+
+/*.henlo-ist--info_contact .henlo-list-item--email::before,
+.henlo-ist--info_contact .henlo-list-item--phone::before {
+  float: left;
+  letter-spacing: .05rem;
+  margin-right: 5px;
+  text-align: right;
+  width: 20px;
+}
+
+.henlo-ist--info_contact .henlo-list-item--email::before {
+  content: '@:';
+}
+
+.henlo-ist--info_contact .henlo-list-item--phone::before {
+  content: 'T:';
+}*/
 
 .henlo-header,
 section /* temporary */ {
-  margin: auto;
+  padding-left: var(--container-gutter);
+  /*padding-right: var(--container-gutter);*/
   position: relative;
   width: var(--container-width);
 }
 
-.henlo-header {
-  padding-bottom: 30px;
-  padding-top: 30px;
-}
-
 .header-img {
-  background-color: var(--brand-primary);
+  border: 4px solid var(--brand-primary);
   display: none;
   position: absolute;
-  left: -40px;
+  left: 35px;
   flex-wrap: wrap;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 90px;
 }
 
 .header-img span {
@@ -106,7 +118,7 @@ section /* temporary */ {
 
 .header-title {
   margin: 0;
-  margin-bottom: .3em;
+  margin-bottom: .5rem;
   text-transform: uppercase;
 }
 
@@ -114,7 +126,7 @@ section /* temporary */ {
   color: var(--brand-primary);
   font-weight: 700;
   margin: 0;
-  margin-bottom: .5em;
+  margin-bottom: 1.25rem;
 }
 
 .header-text {
@@ -124,18 +136,129 @@ section /* temporary */ {
 }
 
 .section {
-  margin-top: 72px;
+  margin-top: 2.5rem;
 }
 
 .section-title {
-  color: #c9cccf;
+  color: var(--section-title-color);
   font-size: .9rem;
+  letter-spacing: .085em;
   margin: 0;
-  margin-bottom: 36px;
+  margin-bottom: 1.75rem;
   text-transform: uppercase;
 }
 
+.hvpod-block p:first-child {
+  margin-top: 0;
+}
+
 .hvpod-title {
+  font-size: 1.15rem;
   margin: 0;
   margin-bottom: 1em;
+}
+
+.hvpod-subtitle {
+  color: var(--text-secondary);
+  font-size: .92rem;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.hvpod-title + .hvpod-subtitle {
+  margin-top: -1em;
+}
+
+.hvpod-element {
+  margin: 0;
+  margin-top: 1em;
+}
+
+.chip {
+  background-color: #f4f4f4;
+  display: inline-block;
+  font-size: .92rem;
+  line-height: 1;
+  padding: .5em .25em 0em .25em;
+}
+
+.chip--primary {
+  background-color: var(--brand-primary-alt);
+  color: var(--brand-primary);
+}
+
+.chip--secondary {
+
+}
+
+.section--contact_infos {
+  font-size: .85rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  margin-left: -1rem;
+  padding: 0;
+}
+
+.gallery--skills_set .gallery-item {
+  margin-bottom: 1.5rem;
+}
+
+.gallery--skills_set .gallery-item {
+  flex: 0 0 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.hvpod--education_degree,
+.hvpod--job {
+  display: flex;
+}
+
+.hvpod-element--highlights ul {
+  list-style: disc;
+  padding-left: 1.33rem;
+}
+
+.hvpod-element--highlights li {
+  margin-bottom: .5rem;
+}
+
+.hvpod--job .hvpod-title {
+  /*text-transform: uppercase;*/
+}
+
+.hvpod--job .hvpod-title em {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.hvpod--education_degree {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.hvpod--education_degree .hvpod-block {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.hvpod--education_degree .hvpod-block--date {
+  color: var(--text-secondary);
+  flex: 1;
+  order: 1;
+}
+
+.hvpod--education_degree .hvpod-block--main {
+  flex: 4;
+  order: 2;
+}
+
+.hvpod--education_degree .hvpod-block--summary {
+  flex: 8;
+  order: 3;
 }

@@ -1,0 +1,33 @@
+
+
+{{#section "education"}}
+<section id="education" class="section">
+  {{#> header-education }}
+    {{> header-simple _title="EDUCATION" _section="education" _hdricon=(lookup . '_icon') }}
+  {{/header-education}}
+  {{#each r.education.history}}
+    {{#> body-education }}
+    <div class="hvpod hvpod--education_degree">
+      <div class="hvpod-block hvpod-block--main">
+        <h3 class="hvpod-title">
+          {{#if title}}
+            {{{ title }}}
+          {{/if}}
+        </h3>
+        <div class="hvpod-subtitle">
+          {{{ institution }}}
+        </div>
+      </div>
+      <div class="hvpod-block hvpod-block--date">
+        {{formatDate end 'YYYY'}}
+      </div>
+      <div class="hvpod-block hvpod-block--summary">
+        {{{ summary }}}
+      </div>
+      <!-- {{> highlights }}
+      {{#if curriculum}}<span class="keywords">{{#each curriculum}}{{{ . }}} {{/each}}</span>{{/if}} -->
+    </div>
+    {{/body-education}}
+  {{/each}}
+</section>
+{{/section}}

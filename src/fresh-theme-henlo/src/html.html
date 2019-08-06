@@ -1,41 +1,40 @@
 {{#*inline "myPartial"}}
   <div id="contact">
-    <ul class="henlo-list">
-      {{#has 'location.city'}}
-        <li class="email">
+    <ul class="henlo-list henlo-ist--info_contact">
+      <!-- {{#has 'location.city'}}
+        <li class="henlo-list-item">
           {{#has 'location.country'}}
             {{concat r.location.city ', ' r.location.country}}
           {{else}}
             {{ r.location.city ~}}
           {{~/has}}
         </li>
-      {{/has}}
+      {{/has}} -->
       {{#has 'contact.email'}}
-        <li class="email">
-          @:
-          <a href="mailto:{{{ RAW.contact.email }}}">
+        <li class="henlo-list-item henlo-list-item--email">
+          <div>@</div>
+          <!-- <a href="mailto:{{{ RAW.contact.email }}}"> -->
             {{ RAW.contact.email }}
-          </a>
+          <!-- </a> -->
         </li>
       {{/has}}
       {{#has 'contact.phone'}}
-        <li class="phone">
-          T: {{ RAW.contact.phone }}
+        <li class="henlo-list-item henlo-list-item--phone">
+          <div>T</div>
+          {{ r.contact.phone }}
         </li>
       {{/has}}
       {{#has 'contact.website'}}
-        <li class="website">
+        <li class="henlo-list-item">
           <a href="{{{ RAW.contact.website }}}">
             {{trimURL RAW.contact.website }}
           </a>
         </li>
       {{/has}}
-    </ul>
 
-    <ul class="henlo-list">
       {{#each r.social}}
-        <li>
-          <span>{{this.label}}</span>
+        <li class="henlo-list-item">
+          <div>{{ this.label }}</div>
           <span>{{concat '@' this.user}}</span>
         </li>
       {{/each}}
@@ -53,54 +52,40 @@
   <body>
     <header class="henlo-header">
       <div class="header-img">
-        <span>A</span>
+        <!-- <span>A</span>
         <span>R</span>
         <span>N</span>
-        <span>+</span>
+        <span>+</span> -->
       </div>
-      <h1 class="header-title">{{{ r.name }}}</h1>
-      <p class="header-subtitle">{{ r.info.label }}</p>
-      {{#has "info.brief"}}
-        <p class="header-text">{{{ r.info.brief }}}<p>
-      {{/has}}
+      <div class="header-block--main">
+        <h1 class="header-title">
+          {{ r.name }}
+        </h1>
+        <p class="header-subtitle">
+          {{ r.info.label }}
+        </p>
+      </div>
+      <div class="header-block--summary">
+        {{#has "info.brief"}}
+          <p class="header-text">{{{ r.info.brief }}}</p>
+        {{/has}}
+      </div>
+
+      <div class="header-block--contact">
+        {{> myPartial }}
+      </div>
     </header>
-    <section>
-      {{> myPartial }}
-    </section>
+    <!-- <section class="section section--contact_infos"> -->
+
+    <!-- </section> -->
     <main>
+      {{> section-employment }}
 
-{{> section-employment }}
+      {{> skills }}
 
-{{> section/skills }}
+      {{> education }}
 
-{{> section/projects }}
-
-{{> section/governance }}
-
-{{> section/education }}
-
-{{> section/affiliation }}
-
-{{> section/service }}
-
-{{> section/extracurricular }}
-
-{{> section/samples }}
-
-{{> section/writing }}
-
-{{> section/reading }}
-
-{{> section/recognition }}
-
-{{> section/speaking }}
-
-{{> section/references }}
-
-{{> section/interests }}
-
-
-
+      {{!--{{> interests }}--}}
     </main>
   </body>
 </html>

@@ -2,6 +2,19 @@ var exec          = require('child_process').exec;
 var gulp          = require('gulp');
 var browserSync   = require('browser-sync').create();
 var flatten       = require('gulp-flatten');
+var glob          = require('glob');
+
+gulp.task('glob-test', function (cb) {
+  gulp.watch([
+    'src/**/*.hbs',
+  ], {usePolling: true}, function (done) {
+    console.log('Changes detected');
+
+    done();
+  });
+
+  cb();
+});
 
 gulp.task('browser-sync', function(cb) {
   browserSync.init({
@@ -13,8 +26,10 @@ gulp.task('browser-sync', function(cb) {
   });
 });
 
-gulp.task('build', function(cb) {
+gulp.task('build', function(cb, a, b) {
+  console.log(a, b);
   exec('yarn hackmyresume:build', function (err, stdout, stderr) {
+
     if (err) {
       console.error(`exec error: ${err}`);
 
@@ -34,6 +49,10 @@ gulp.task('watch', function(cb) {
     'src/**/*.html',
     'src/**/*.json',
   ], {usePolling: true}, gulp.series([
+      (done) => {
+        console.log('detected');
+        done();
+      },
       'build',
       (done) => {
         browserSync.reload();

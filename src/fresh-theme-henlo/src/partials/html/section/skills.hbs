@@ -1,0 +1,25 @@
+{{#section "skills"}}
+  <section id="skills" class="section">
+    {{#> header-skills }}
+      {{> header-simple _title="SKILLS" _section="skills" }}
+    {{/header-skills}}
+    <ul class="gallery gallery--grid gallery--skills_set">
+      {{#each r.skills.sets}}
+        <li class="gallery-item">
+          <div class="hvpod hvpod--skills_set">
+            <div class="hvpod-block">
+              <h4 class="hvpod-title">{{ name }}</h4>
+              <ul class="henlo-list henlo-list--keywords">
+                {{#each skills}}
+                  <li class="henlo-list-item">
+                    <span class="chip chip--primary">{{ . }}</span>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+{{/section}}
