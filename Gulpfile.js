@@ -2,19 +2,6 @@ var exec          = require('child_process').exec;
 var gulp          = require('gulp');
 var browserSync   = require('browser-sync').create();
 var flatten       = require('gulp-flatten');
-var glob          = require('glob');
-
-gulp.task('glob-test', function (cb) {
-  gulp.watch([
-    'src/**/*.hbs',
-  ], {usePolling: true}, function (done) {
-    console.log('Changes detected');
-
-    done();
-  });
-
-  cb();
-});
 
 gulp.task('browser-sync', function(cb) {
   browserSync.init({
@@ -24,10 +11,11 @@ gulp.task('browser-sync', function(cb) {
       baseDir: './dist/',
     },
   });
+
+  cb();
 });
 
 gulp.task('build', function(cb, a, b) {
-  console.log(a, b);
   exec('yarn hackmyresume:build', function (err, stdout, stderr) {
 
     if (err) {
@@ -43,27 +31,10 @@ gulp.task('build', function(cb, a, b) {
   });
 });
 
-gulp.task('watch', function(cb) {
-  gulp.watch([
-    'src/**/*.hbs',
-    'src/**/*.html',
-    'src/**/*.json',
-  ], {usePolling: true}, gulp.series([
-      (done) => {
-        console.log('detected');
-        done();
-      },
-      'build',
-      (done) => {
-        browserSync.reload();
-        done();
-      },
-    ])
-  );
-
+gulp.task('watch-css', function(cb) {
   // Avoid rebuilding everything for css changes !
   gulp.watch([
-    'src/**/*.css',
+    './src/**/*.css',
   ], {usePolling: true}, gulp.series([
       (done) => {
         gulp
@@ -77,8 +48,26 @@ gulp.task('watch', function(cb) {
       },
     ])
   );
-
-  cb();
 });
 
-gulp.task('default', gulp.series('build', gulp.parallel(['browser-sync', 'watch'])));
+gulp.task('watch-tpl', function(cb) {
+  gulp.watch('src/**/*.{hbs,html,json}', {usePolling: true}, gulp.series([
+      (done) => {
+        console.log('Changes detected');
+
+        done();
+      },
+      'build',
+      (done) => {
+        browserSync.reload();
+        done();
+      },
+    ])
+  );
+});
+
+gulp.task('default', gulp.series(gulp.parallel([
+  'browser-sync',
+  'watch-css',
+  'watch-tpl'
+])));
