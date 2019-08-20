@@ -1,12 +1,5 @@
-
-
-{{#section "education"}}
-<section id="education" class="section">
-  {{#> header-education }}
-    {{> header-simple _title="EDUCATION" _section="education" _hdricon=(lookup . '_icon') }}
-  {{/header-education}}
-  {{#each r.education.history}}
-    {{#> body-education }}
+{{#> molecule-section sectionId='education' sectionTitleKey='EDUCATION' data=r.education.history}}
+  {{#*inline 'section-gallery-item'}}
     <div class="hvpod hvpod--education_degree">
       <div class="hvpod-block hvpod-block--main">
         <h3 class="hvpod-title">
@@ -24,10 +17,6 @@
       <div class="hvpod-block hvpod-block--summary">
         {{{ summary }}}
       </div>
-      <!-- {{> highlights }}
-      {{#if curriculum}}<span class="keywords">{{#each curriculum}}{{{ . }}} {{/each}}</span>{{/if}} -->
     </div>
-    {{/body-education}}
-  {{/each}}
-</section>
-{{/section}}
+  {{/inline}}
+{{/molecule-section}}

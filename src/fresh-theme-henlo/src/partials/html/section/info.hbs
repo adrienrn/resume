@@ -1,11 +1,30 @@
 {{#has 'info.brief'}}
-<hr>
-<section id="summary">
-  {{#> header-info }}
-    {{> header-icon _title="About" _section="info" _hdricon=(lookup . '_icon') }}
-  {{/header-info}}
-  {{#> body-info }}
-    {{{ r.info.brief }}}
-  {{/body-info}}
-</section>
+  <section class="section section--header henlo-header">
+    <div class="header-img">
+      <span>A</span>
+      <span>R</span>
+      <span>N</span>
+      <span>+</span>
+    </div>
+    <div class="header-block--main">
+      <h1 class="header-title">
+        {{ r.name }}
+      </h1>
+      <p class="header-subtitle">
+        {{ r.info.label }}
+      </p>
+    </div>
+    {{#has "info.brief"}}
+      <div class="header-block--summary">
+        <p class="header-text">{{{ r.info.brief }}}</p>
+      </div>
+    {{/has}}
+
+    <div class="header-block--contact">
+      {{> myPartial }}
+    </div>
+    <div class="header-block--contact">
+      {{> myPartial2 }}
+    </div>
+  </section>
 {{/has}}

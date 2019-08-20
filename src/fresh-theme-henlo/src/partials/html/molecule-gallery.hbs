@@ -1,0 +1,7 @@
+<ul class="gallery {{concat 'gallery--' type}}">
+  {{#each data}}
+    <li class="gallery-item">
+      {{> @partial-block }}
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,33 @@
+{{#> molecule-section sectionId='employment' sectionTitleKey='EMPLOYMENT' data=r.employment.history}}
+  {{#*inline 'section-gallery-item'}}
+    <div class="hvpod hvpod--job">
+      <div class="hvpod-block">
+        <h3 class="hvpod-title">
+          {{ position }}
+        </h3>
+        <p class="hvpod-subtitle">
+          <em>
+            {{#if url }}
+              <a href="{{{ url }}}">{{ employer }}</a>
+            {{else}}
+              {{ employer }}
+            {{/if}}
+          </em> |
+          {{ dateRange . }}
+        </p>
+
+        <div class="hvpod-element">{{{ summary }}}</div>
+
+        <div class="hvpod-element hvpod-element--highlights">
+          {{> highlights }}
+        </div>
+
+        {{#if keywords}}
+          <div class="hvpod-element">
+            {{> molecule-keywords keywordType="secondary" }}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/inline}}
+{{/molecule-section}}

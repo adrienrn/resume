@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow:400,700,900');
-@import url('https://fonts.googleapis.com/css?family=Muli:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700,900');
 
 :root {
   --brand-primary: #5400E5;
-  --container-gutter: 140px;
+  --brand-primary-alt: hsla(262, 100%, 45%, .1);
+  /*--brand-primary: hsl(233, 100%, 57%);*/
+  /*--brand-primary: hsl(167, 60%, 61%);*/
+  /*--brand-primary-alt: hsla(233, 100%, 57%, .1);*/
+  /*--container-gutter: 140px;*/
   --container-width: 21.7cm;
   --text-secondary: #62666a;
   --section-title-color: hsl(210, 6%, 70%);
-  --brand-primary-alt: hsla(262, 100%, 45%, .1);
+
   --font-family-primary: Muli, Arial, sans-serif;
   --font-family-secondary: Barlow, Arial, sans-serif;
+  /*--font-family-secondary2: 'Droid Serif', Arial, sans-serif;*/
 }
 
 * {
@@ -20,7 +25,8 @@ html,
 body {
   color: #00000;
   font-family: var(--font-family-primary);
-  font-size: 16px;
+  font-size: 11px;
+  font-weight: 600;
   line-height: 1.33;
   margin: 0;
 }
@@ -40,6 +46,32 @@ h2 {
   font-weight: 900;
 }
 
+.layout__content {
+  display: grid;
+  grid-gap: .75cm;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen {
+  /* Helps previewing stuff. */
+  .layout__content {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+    height: 29.7cm;
+    margin: 4rem;
+    padding: 1.25cm;
+    width: 21cm;
+  }
+}
+
+.section--header {
+  grid-column: span 2;
+}
+
+.section--employment {
+  grid-row: span 4;
+}
+
 /*.timeline,*/
 .henlo-list {
   list-style: none;
@@ -47,13 +79,8 @@ h2 {
   padding: 0px;
 }
 
-.henlo-list--job_keywords,
-.henlo-list--skills_set {
-  margin-left: -.4em;
-}
-
 .henlo-list-item {
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 
 .henlo-list--keywords .henlo-list-item,
@@ -63,57 +90,85 @@ h2 {
   margin-left: .2em;
 }
 
-.henlo-ist--info_contact {
-  display: flex;
-  justify-content: space-between;
-}
-
 .henlo-ist--info_contact .henlo-list-item {
-  /*flex: 0 0 33%;*/
-  font-size: .85rem;
-  margin-bottom: .1em;
-  /*text-align: right;*/
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/*.henlo-ist--info_contact .henlo-list-item--email::before,
-.henlo-ist--info_contact .henlo-list-item--phone::before {
-  float: left;
-  letter-spacing: .05rem;
-  margin-right: 5px;
-  text-align: right;
-  width: 20px;
+.henlo-ist--info_contact .henlo-list-item dt {
+  display: none;
 }
 
-.henlo-ist--info_contact .henlo-list-item--email::before {
-  content: '@:';
+.henlo-ist--info_contact .henlo-list-item dd {
+  flex: 1;
+  margin-left: .5rem;
 }
-
-.henlo-ist--info_contact .henlo-list-item--phone::before {
-  content: 'T:';
-}*/
 
 .henlo-header,
 section /* temporary */ {
-  padding-left: var(--container-gutter);
+  /*padding-left: var(--container-gutter);*/
   /*padding-right: var(--container-gutter);*/
   position: relative;
-  width: var(--container-width);
+  /*width: var(--container-width);*/
+}
+
+.henlo-header {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header-img {
-  border: 4px solid var(--brand-primary);
-  display: none;
-  position: absolute;
-  left: 35px;
-  flex-wrap: wrap;
-  width: 70px;
-  height: 90px;
+  margin-right: 2rem;
+}
+
+.header-block--main {
+  order: 1;
+  flex: 1;
+}
+
+.header-block--contact {
+  order: 2;
+}
+
+.header-block--contact + .header-block--contact {
+  margin-left: 3rem;
+}
+
+.header-block--summary {
+  order: 3;
+}
+
+.header-block--summary {
+/*  width: 80%;*/
+}
+
+.header-block--summary .header-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-family: var(--font-family-secondary2);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.header-img {
+  align-items: center;
+  /*box-shadow: 2px 2px 0 var(--brand-primary), -2px -2px 0 var(--brand-primary);*/
+  border: 2px solid var(--brand-primary);
+  display: grid;
+  height: 200px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  height: 45px;
+  width: 45px;
 }
 
 .header-img span {
-  flex: 0 0 40%;
-  padding: 5%;
+  color: var(--brand-primary);
+  display: block;
+  font-size: 1.15rem;
+  font-weight: bolder;
 }
 
 .header-title {
@@ -123,20 +178,11 @@ section /* temporary */ {
 }
 
 .header-subtitle {
-  color: var(--brand-primary);
+  /*color: var(--brand-primary);*/
+  font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
   margin-bottom: 1.25rem;
-}
-
-.header-text {
-  color: var(--text-secondary);
-  margin: 0;
-  margin-bottom: 1em;
-}
-
-.section {
-  margin-top: 2.5rem;
 }
 
 .section-title {
@@ -144,29 +190,25 @@ section /* temporary */ {
   font-size: .9rem;
   letter-spacing: .085em;
   margin: 0;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
-.hvpod-block p:first-child {
+.hvpod-block *:first-child {
   margin-top: 0;
 }
 
 .hvpod-title {
   font-size: 1.15rem;
   margin: 0;
-  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .hvpod-subtitle {
   color: var(--text-secondary);
   font-size: .92rem;
   margin: 0;
-  margin-bottom: 1em;
-}
-
-.hvpod-title + .hvpod-subtitle {
-  margin-top: -1em;
+  margin-top: .33em;
 }
 
 .hvpod-element {
@@ -187,31 +229,27 @@ section /* temporary */ {
   color: var(--brand-primary);
 }
 
-.chip--secondary {
-
-}
-
-.section--contact_infos {
-  font-size: .85rem;
-}
-
 .gallery {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  margin-left: -1rem;
   padding: 0;
 }
 
-.gallery--skills_set .gallery-item {
-  margin-bottom: 1.5rem;
+.gallery-item {
+  margin-bottom: .5rem;
 }
 
-.gallery--skills_set .gallery-item {
-  flex: 0 0 50%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.section--skills .gallery {
+  display: grid;
+  grid-gap: .75rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery--skills .gallery-item {
+  margin: 0;
 }
 
 .hvpod--education_degree,
@@ -261,4 +299,39 @@ section /* temporary */ {
 .hvpod--education_degree .hvpod-block--summary {
   flex: 8;
   order: 3;
+}
+
+.hvpod--language {
+  display: flex;
+}
+
+.hvpod-block > *:last-child {
+  margin-bottom: 0;
+}
+
+.hvpod--language .hvpod-block {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.hvpod--language .hvpod-block--main {
+  flex: 0 0 70px;
+}
+
+.henlo-ist--info_contact .henlo-list-item {
+  margin-bottom: .25rem;
+}
+
+.henlo-ist--info_contact .henlo-list-item dd {
+  color: var(--text-secondary);
+  font-size: .92rem;
+}
+
+.henlo-ist--info_contact .henlo-list-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hvpod--skills_set .hvpod-title {
+  margin-bottom: .75rem;
 }

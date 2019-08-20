@@ -1,18 +1,11 @@
-{{#section "interests"}}
-<section id="interests">
-  {{#> header-interests }}
-    {{> header-simple _title="INTERESTS" _section="interests" _hdricon=(lookup . '_icon') }}
-  {{/header-interests}}
-  {{#each r.interests}}
-    {{#> body-interests }}
+{{#> molecule-section sectionId='interests' sectionTitleKey='INTERESTS' data=r.interests}}
+  {{#*inline 'section-gallery-item'}}
     <div>
-    <h3><em>{{{ name }}}</em></h3>
+    <h3>{{{ name }}}</h3>
 
     {{{ summary }}}
 
     {{> highlights }}
     </div>
-    {{/body-interests}}
-  {{/each}}
-</section>
-{{/section}}
+  {{/inline}}
+{{/molecule-section}}
