@@ -49,7 +49,7 @@ h2 {
 .layout__content {
   display: grid;
   grid-gap: .75cm;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 @media screen {
@@ -64,11 +64,16 @@ h2 {
   }
 }
 
-.section--header {
+.section {
   grid-column: span 2;
 }
 
+.section--header {
+  grid-column: span 5;
+}
+
 .section--employment {
+  grid-column: span 3;
   grid-row: span 4;
 }
 
