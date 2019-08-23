@@ -11,10 +11,13 @@ gulp.task('browser-sync', function(cb) {
       baseDir: './dist/',
     },
   });
+
+  cb();
 });
 
-gulp.task('build', function(cb) {
+gulp.task('build', function(cb, a, b) {
   exec('yarn hackmyresume:build', function (err, stdout, stderr) {
+
     if (err) {
       console.error(`exec error: ${err}`);
 
@@ -28,23 +31,10 @@ gulp.task('build', function(cb) {
   });
 });
 
-gulp.task('watch', function(cb) {
-  gulp.watch([
-    'src/**/*.hbs',
-    'src/**/*.html',
-    'src/**/*.json',
-  ], {usePolling: true}, gulp.series([
-      'build',
-      (done) => {
-        browserSync.reload();
-        done();
-      },
-    ])
-  );
-
+gulp.task('watch-css', function(cb) {
   // Avoid rebuilding everything for css changes !
   gulp.watch([
-    'src/**/*.css',
+    './src/**/*.css',
   ], {usePolling: true}, gulp.series([
       (done) => {
         gulp
@@ -58,8 +48,26 @@ gulp.task('watch', function(cb) {
       },
     ])
   );
-
-  cb();
 });
 
-gulp.task('default', gulp.series('build', gulp.parallel(['browser-sync', 'watch'])));
+gulp.task('watch-tpl', function(cb) {
+  gulp.watch('src/**/*.{hbs,html,json}', {usePolling: true}, gulp.series([
+      (done) => {
+        console.log('Changes detected');
+
+        done();
+      },
+      'build',
+      (done) => {
+        browserSync.reload();
+        done();
+      },
+    ])
+  );
+});
+
+gulp.task('default', gulp.series(gulp.parallel([
+  'browser-sync',
+  'watch-css',
+  'watch-tpl'
+])));
