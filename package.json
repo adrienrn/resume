@@ -7,7 +7,6 @@
     "hackmyresume:build": "hackmyresume -d build src/base.json TO dist/base.html --theme ./src/fresh-theme-henlo && node ./scripts/generate-pdf.js ./dist/base.html ./dist/base.pdf",
     "hackmyresume:dist": "hackmyresume build src/base.json src/private-*.json TO dist/resume.html --theme ./src/fresh-theme-henlo && node ./scripts/generate-pdf.js ./dist/resume.html ./dist/resume.pdf",
     "dev:browser-sync": "gulp",
-    "dev:webpack": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
