@@ -16,14 +16,16 @@
           {{ dateRange . }}
         </p>
 
-        <div class="hvpod-element">{{{ summary }}}</div>
+        {{#if summary}}
+          <div class="hvpod-element">{{{ summary }}}</div>
+        {{/if}}
 
         <div class="hvpod-element hvpod-element--highlights">
           {{> highlights }}
         </div>
 
         {{#if keywords}}
-          <div class="hvpod-element">
+          <div class="hvpod-element hvpod-element--keywords">
             {{> molecule-keywords keywordType="secondary" }}
           </div>
         {{/if}}

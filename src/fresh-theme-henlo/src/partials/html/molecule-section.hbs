@@ -3,11 +3,13 @@
     {{> header-simple _title=sectionTitleKey _section=sectionId }}
 
     {{#> section-body }}
-      {{#> molecule-gallery data=data}}
-        {{#> section-gallery-item}}
-          {{!-- Default content goes here. --}}
-        {{/section-gallery-item}}
-      {{/molecule-gallery}}
+      <div class="section-block">
+        {{#> molecule-gallery data=data}}
+          {{#> section-gallery-item}}
+            {{!-- Default content goes here. --}}
+          {{/section-gallery-item}}
+        {{/molecule-gallery}}
+      </div>
     {{/section-body }}
   </section>
 {{/section}}
