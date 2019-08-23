@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "hackmyresume:build": "hackmyresume -d build src/base.json TO dist/base.html --theme ./src/fresh-theme-henlo",
+    "hackmyresume:build": "hackmyresume -d build src/base.json TO dist/base.html --theme ./src/fresh-theme-henlo && node ./scripts/generate-pdf.js ./dist/base.html ./dist/base.pdf",
+    "hackmyresume:dist": "hackmyresume build src/base.json src/contacts.json TO dist/resume.html --theme ./src/fresh-theme-henlo && node ./scripts/generate-pdf.js ./dist/resume.html ./dist/resume.pdf",
     "dev:browser-sync": "gulp",
     "dev:webpack": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,13 +18,10 @@
     "gulp": "^4.0.2",
     "gulp-flatten": "^0.4.0",
     "hackmyresume": "1.9.0-beta",
-    "html-webpack-plugin": "^3.2.0",
-    "lodash": "4.17.13",
-    "raw-loader": "^2.0.0",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1",
-    "webpack-shell-plugin-next": "^0.6.4"
+    "lodash": "4.17.13"
   },
-  "dependencies": {}
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "puppeteer": "^1.19.0"
+  }
 }
