@@ -2,6 +2,8 @@
 
 A little personal project to author a kick-ass resume in HTML or PDF.
 
+![PDF resume preview](https://raw.githubusercontent.com/adrienrn/resume/dev/screenshot.jpg)
+
 Most of the work is leveraged by [hacksalot/HackMyResume](https://github.com/hacksalot/HackMyResume), kudos to him.
 
 This project contains my resume as a .json file (FRESH resume) aggremented with tools to help develop and release:
