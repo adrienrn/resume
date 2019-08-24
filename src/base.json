@@ -72,7 +72,7 @@
         "position": "Developer",
         "start": "2010-09",
         "end": "2013-09",
-        "keywords": ["Shell/Bash", "Perl", "Nagios", "Java", "PHP"],
+        "keywords": ["Shell/Bash", "Perl", "Nagios", "Java", "Scala", "PHP"],
         "highlights": [
           "Managed and developed over 200 monitoring probe scripts executing across 100+ heterogeneous information systems of top French finance, bank, energy or tourism companies",
           "Developed a probe framework/SDK in Perl to unify inputs and outputs, hunted duplicates and set up versioning, dependency management, packaging and normalized execution environments (deployment of physical appliance)."
@@ -157,7 +157,7 @@
     },
     {
       "name": "Tech",
-      "summary": "Listening to Syntax.FM, Shoptalk Show, Fun Fun Function, Coding Train, The Futur; Playing w/ Arduino’s"
+      "summary": "Listening to Syntax.FM, Shoptalk Show, Fun Fun Function, Coding Train, The Futur; Playing w/ Arduino"
     },
     {
       "name": "Sport",
