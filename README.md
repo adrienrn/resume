@@ -44,7 +44,7 @@ Any files named `private-*.json` in the `src/` will be included in this type of 
 
 ### Are you going to release the henlo theme?
 
-🇫🇷 Oui, 🇩🇪 Ja, 🇷🇺 Da!
+🇫🇷 Oui, 🇩🇪 Ja
 
 However, at the moment it only supports a handful of FRESH fields that I am using. 👹
 
