@@ -14,8 +14,8 @@
     "email": "john.doe@example.com"
   },
   "location": {
-    "city": "Paris",
-    "country": "FR"
+    "city": "Berlin",
+    "country": "DE"
   },
   "social": [
     {
@@ -38,7 +38,7 @@
         "position": "Lead Front-end Developer",
         "start": "2016-10",
         "end": "2019-07",
-        "keywords": ["HTML", "CSS", "Sass", "Twig", "Symfony 2", "Symfony 3", "Symfony 4", "jQuery", "React", "MongoDB", "GraphQL", "MJML", "Docker"],
+        "keywords": ["HTML", "CSS", "Sass", "Twig", "Symfony 2/3/4", "jQuery", "React", "MongoDB", "GraphQL", "MJML", "Docker"],
         "highlights": [
           "Handled 25+ client projects for CAC40 and SBF120 companies such as banks, energy companies, and asset managers; by developing a theming system for newsrooms and emailing on top of Symfony/MongoDB.",
           "Hired and supervised a team of 2 to 6 people including developers, designers and a project manager and set up a design-development workflow using Atomic Design principles.",
@@ -61,7 +61,7 @@
         "position": "Entrepreneur",
         "start": "2013-09",
         "end": "2016-10",
-        "keywords": ["PHP", "HTML", "CSS", "Sass", "Angular 1", "Angular 2", "jQuery", "Handlebars", "Mustache"],
+        "keywords": ["PHP", "HTML", "CSS", "Sass", "Angular 1/2", "jQuery", "Handlebars", "Mustache"],
         "highlights": [
           "Launched a french flatsharing and roommate finder website, reaching 16 000 users and 70 000+ page views per month.",
           "Designed the website and brand identity. Developed the website’s front-end and back-end features such as: a search with advanced Google Map integration, one-to-one and group messaging and a booking/payment system (Stripe / MangoPay)."
@@ -146,8 +146,8 @@
       "summary": "A2"
     },
     {
-      "language": "Russian",
-      "summary": "A2"
+      "language": "German",
+      "summary": "A1"
     }
   ],
   "interests": [
