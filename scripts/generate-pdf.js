@@ -12,7 +12,6 @@ const outputFile = path.resolve(argv._[1]);
     // Note that running inside a docker requires special arguments.
     const browser = await puppeteer.launch({
       args: ['--no-sandbox'],
-      executablePath: 'google-chrome-unstable',
     })
 
     // Open the source page.
